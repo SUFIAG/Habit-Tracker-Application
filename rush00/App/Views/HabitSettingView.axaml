@@ -1,0 +1,26 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="App.Views.HabitSettingView">
+	<StackPanel Spacing="14" Margin="4">
+		<StackPanel>
+			<Label Content="Set a habit to track:" />
+			<TextBox Text="{Binding Title}" />
+		</StackPanel>
+		<StackPanel>
+			<Label Content="What would be a motivation:" />
+			<TextBox Text="{Binding Motivation}" />
+		</StackPanel>
+		<StackPanel>
+			<Label Content="When will you start:" />
+			<DatePicker SelectedDate="{Binding StartDate, Mode=TwoWay}" />
+		</StackPanel>
+		<StackPanel>
+			<Label Content="How many days you want to challenge yourself for:" />
+			<NumericUpDown Minimum="0" Value="{Binding Duration}" />
+		</StackPanel>
+		<Button Content="Let's start!" Command="{Binding StartTracking}" />
+	</StackPanel>
+</UserControl>
